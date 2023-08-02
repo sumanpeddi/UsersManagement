@@ -4,6 +4,8 @@ import AddUser from './AddUser';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import EditUser from './EditUser';
+import { useContext } from 'react';
+import { context } from '../Context/Context';
 
 const fetchUsers = async()=>{
     return await axios.get("https://localhost:8082/api/Users");
@@ -11,7 +13,7 @@ const fetchUsers = async()=>{
 
 function ViewUsers(){
 
-    const [data,setData] = useState([]);
+    const {data,setData} = useContext(context);
     const [edituser,setEditUser] = useState(false);
     const [adduser,setAddUser] = useState(false);
     const [selecteduser,setSelectedUser] = useState({});

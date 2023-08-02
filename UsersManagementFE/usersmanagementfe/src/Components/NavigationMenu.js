@@ -2,26 +2,26 @@ import {useState,useEffect} from 'react';
 import {NavBar,Container,Row,Col,Card, InputGroup,Button,Form} from 'react-bootstrap';
 
 
-function NavigationMenu({username}){
+function NavigationMenu({username,setMenuFilter}){
 
     return(
         <div className="filters">
-            <span className="title">{username.toUpperCase()}</span>
-            <span >
-               <p style={{cursor:"pointer"}}>
+            <span id="heading" className="title">{username.toUpperCase()}</span>
+            <span id="dashbd">
+               <p style={{cursor:"pointer"}} onClick={()=>{setMenuFilter("DashboardAnalytics")}}>
                     Dashboard 
                </p>
                               
 
             </span>
-            <span >
-                <p style={{cursor:"pointer"}}>
+            <span id="app">
+                <p style={{cursor:"pointer"}} onClick={()=>{setMenuFilter("App")}}>
                     Applications  
                 </p>             
 
             </span>
-            <span id="users" onClick={()=>{}}>
-                <p style={{cursor:"pointer"}}>
+            <span id="users" >
+                <p style={{cursor:"pointer"}} onClick={()=>{setMenuFilter("Users")}}>
                     UserManagement   
                 </p>            
 
